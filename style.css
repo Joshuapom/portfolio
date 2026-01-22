@@ -1,40 +1,112 @@
+/* VARIABLES DE COLOR */
+:root {
+    --neon-blue: #4ea1ff;
+    --neon-blue-light: #82c0ff;
+    --neon-purple: #a770ff;
+}
+
+/* GENERAL */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #eee;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #e6e6e6;
     margin: 0;
     padding: 0;
 }
 
+/* HERO */
 header {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #1a1a1a;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    border-bottom: 1px solid #222;
+    box-shadow: 0 0 25px rgba(78, 161, 255, 0.15);
 }
 
 h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 h2 {
     margin-top: 10px;
     font-weight: 300;
-    color: #aaa;
+    color: var(--neon-blue-light);
 }
 
+/* SECCIONES GENERALES */
 section {
-    padding: 20px 40px;
+    padding: 40px 60px;
+    max-width: 900px;
+    margin: auto;
 }
 
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--neon-blue);
+    padding-left: 10px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+h3:hover {
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+}
+
+/* SECCIONES DE PROYECTO */
+section[id] {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #141414;
+    border-radius: 8px;
+    border: 1px solid #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+section[id]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(78, 161, 255, 0.3);
+    border-color: var(--neon-blue);
+}
+
+/* ENLACES */
 a {
-    color: #4ea1ff;
+    color: var(--neon-blue);
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+a:hover {
+    color: var(--neon-purple);
+}
+
+/* BOTONES DE PROYECTO */
+section[id] a {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #1f1f1f;
+    border-radius: 6px;
+    border: 1px solid #333;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+section[id] a:hover {
+    background-color: var(--neon-blue);
+    color: #0d0d0d;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 12px rgba(78, 161, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #1a1a1a;
+    background-color: #111;
     margin-top: 40px;
+    border-top: 1px solid #222;
 }
