@@ -141,70 +141,74 @@ code, pre {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 20% 50%, rgba(0, 180, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(157, 78, 221, 0.1) 0%, transparent 50%);
-    position: relative;
-    padding-top: 80px;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, var(--bg-dark) 0%, #0c0c0c 100%);
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero-text-center {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
-    background: linear-gradient(to right, var(--neon-blue), var(--neon-cyan));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--neon-blue);
     margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .hero-subtitle {
     font-size: 1.8rem;
-    font-weight: 500;
-    color: var(--text-muted);
+    font-weight: 400;
+    color: var(--text-light);
     margin-bottom: 30px;
 }
 
 .hero-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 40px;
+    font-size: 1.2rem;
+    line-height: 1.7;
     color: var(--text-muted);
+    margin-bottom: 50px;
+    max-width: 600px;
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn {
-    padding: 14px 32px;
+    padding: 15px 35px;
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    display: inline-block;
+    font-size: 1.1rem;
 }
 
 .btn-primary {
-    background: var(--gradient-blue);
+    background: linear-gradient(135deg, var(--neon-blue), #0066ff);
     color: white;
+    border: none;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-blue);
+    box-shadow: 0 10px 25px rgba(0, 180, 255, 0.4);
 }
 
 .btn-secondary {
@@ -216,57 +220,6 @@ code, pre {
 .btn-secondary:hover {
     background: rgba(0, 180, 255, 0.1);
     transform: translateY(-3px);
-}
-
-.hero-visual {
-    display: flex;
-    justify-content: center;
-}
-
-.code-block {
-    background: var(--bg-card);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    width: 100%;
-    max-width: 500px;
-}
-
-.code-header {
-    background: var(--accent);
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.code-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.code-dot.red { background: #ff5f56; }
-.code-dot.yellow { background: #ffbd2e; }
-.code-dot.green { background: #27ca3f; }
-
-.code-title {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.code-block pre {
-    padding: 30px;
-    margin: 0;
-    overflow-x: auto;
-}
-
-.code-block code {
-    color: #8be9fd;
-    font-size: 16px;
-    line-height: 1.5;
 }
 
 .scroll-indicator {
@@ -288,6 +241,32 @@ code, pre {
     60% {transform: translateY(-5px) translateX(-50%);}
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 250px;
+        text-align: center;
+    }
+}
 /* SECCIONES */
 .section-header {
     text-align: center;
