@@ -3,87 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de jÔsh</title>
+    <title>Josh García | Cybersecurity & IT Specialist</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">JG</span>
+                <span class="logo-text">Josh García</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- HERO -->
-    <header>
-        <h1>Josh García</h1>
-        <h2>Cybersecurity & IT · Web Development · Data Analysis</h2>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Josh García</h1>
+                <div class="typing-container">
+                    <h2 class="hero-subtitle">Cybersecurity & IT Specialist</h2>
+                </div>
+                <p class="hero-description">Profesional junior especializado en ciberseguridad, desarrollo web y análisis de datos. Enfoque analítico y orientado a soluciones.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contact" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">security_scan.py</span>
+                    </div>
+                    <pre><code class="language-python">def detect_intrusion(logs):
+    # Análisis de patrones de ataque
+    threats = analyze_patterns(logs)
+    alerts = generate_alerts(threats)
+    return alerts</code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </header>
 
     <!-- SOBRE MÍ -->
-
-    
-    <section id="about">
-        <h3>Sobre mí</h3>
-        <p>
-            Soy un profesional junior en ciberseguridad, IT y desarrollo web. 
-            Me caracterizo por un enfoque metódico, analítico y orientado a la resolución de problemas. 
-            Disfruto aprender, crear proyectos prácticos y mejorar mis habilidades técnicas día a día.
-        </p>
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Sobre mí</span>
+                <h3 class="section-title">Perfil Profesional</h3>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy un profesional junior en ciberseguridad, IT y desarrollo web con un enfoque metódico, analítico y orientado a la resolución de problemas. Mi pasión es transformar desafíos técnicos en soluciones eficientes.</p>
+                    <p>Disfruto aprendiendo nuevas tecnologías, creando proyectos prácticos y mejorando mis habilidades técnicas continuamente.</p>
+                    <div class="skills">
+                        <div class="skill-tag">Cybersecurity</div>
+                        <div class="skill-tag">Network Analysis</div>
+                        <div class="skill-tag">Splunk SIEM</div>
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">Web Development</div>
+                        <div class="skill-tag">Data Analysis</div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Proyectos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Tecnologías</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Dedicación</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
- <!-- PROYECTOS -->
+    <!-- PROYECTOS -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Portfolio</span>
+                <h3 class="section-title">Proyectos Destacados</h3>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Laboratorios prácticos y herramientas de seguridad informática</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="project-title">Splunk SIEM Lab</h4>
+                    <h5 class="project-subtitle">Detección de Fuerza Bruta SSH</h5>
+                    <p class="project-description">Laboratorio completo de Blue Team configurando Splunk, ingiriendo logs, detectando ataques SSH y creando alertas automatizadas.</p>
+                    <div class="project-tech">
+                        <span>Splunk</span>
+                        <span>Linux</span>
+                        <span>SPL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Joshuapom/splunk-siem-lab" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-file-alt"></i> Reporte
+                        </a>
+                    </div>
+                </div>
 
-<section id="splunk">
-    <h3>Splunk SIEM Lab – Detección de Fuerza Bruta SSH</h3>
-    <p>
-        Laboratorio completo de Blue Team donde configuro Splunk, ingiero logs,
-        detecto un ataque de fuerza bruta SSH y creo una alerta automatizada.
-    </p>
-    <ul>
-        <li><strong>Objetivo:</strong> Simular un flujo SOC real.</li>
-        <li><strong>Tecnologías:</strong> Splunk, Linux, auth.log, SPL.</li>
-        <li><strong>Aprendizajes:</strong> Ingesta, detección, alertas, análisis.</li>
-    </ul>
-    <p><a href="https://github.com/Joshuapom/splunk-siem-lab" target="_blank">Ver en GitHub</a></p>
-</section>
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4 class="project-title">Análisis de Tráfico</h4>
+                    <h5 class="project-subtitle">DNS, HTTP & TLS con Wireshark</h5>
+                    <p class="project-description">Práctica de análisis de tráfico real: resolución DNS, tráfico HTTP, conexiones TLS y patrones de comunicación.</p>
+                    <div class="project-tech">
+                        <span>Wireshark</span>
+                        <span>Network</span>
+                        <span>Protocols</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Joshuapom/wireshark-network-analysis" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                    </div>
+                </div>
 
-<section id="wireshark-network">
-    <h3>Análisis de Tráfico DNS, HTTP y TLS con Wireshark</h3>
-    <p>
-        Práctica orientada al análisis de tráfico real: resolución DNS, tráfico HTTP,
-        conexiones TLS y patrones de comunicación entre cliente y servidor.
-    </p>
-    <p><a href="https://github.com/Joshuapom/wireshark-network-analysis" target="_blank">Ver en GitHub</a></p>
-</section>
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h4 class="project-title">Detección ARP Spoofing</h4>
+                    <h5 class="project-subtitle">Análisis Comparativo con Wireshark</h5>
+                    <p class="project-description">Identificación de ataques de suplantación ARP mediante análisis de patrones anómalos en tráfico de red.</p>
+                    <div class="project-tech">
+                        <span>Wireshark</span>
+                        <span>Security</span>
+                        <span>ARP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Joshuapom/arp-spoofing-detection-wireshark" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                    </div>
+                </div>
 
-<section id="arp-spoofing">
-    <h3>Detección de ARP Spoofing con Wireshark</h3>
-    <p>
-        Análisis comparativo entre tráfico ARP legítimo y tráfico manipulado.
-        Identificación de ataques de suplantación ARP mediante patrones anómalos.
-    </p>
-    <p><a href="https://github.com/Joshuapom/arp-spoofing-detection-wireshark" target="_blank">Ver en GitHub</a></p>
-</section>
+                <!-- Proyecto 4 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="project-title">Detección Escaneos Nmap</h4>
+                    <h5 class="project-subtitle">Análisis de Patrones de Escaneo</h5>
+                    <p class="project-description">Laboratorio de análisis de escaneos SYN, ACK, FIN y Xmas, interpretando comportamiento del firewall y patrones de ataque.</p>
+                    <div class="project-tech">
+                        <span>Nmap</span>
+                        <span>Wireshark</span>
+                        <span>Firewall</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Joshuapom/nmap-wireshark-scan-detection" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                    </div>
+                </div>
 
-<section id="nmap-detection">
-    <h3>Detección de Escaneos Nmap con Wireshark</h3>
-    <p>
-        Laboratorio donde analizo escaneos SYN, ACK, FIN y Xmas, interpretando
-        el comportamiento del firewall y los patrones de escaneo.
-    </p>
-    <p><a href="https://github.com/Joshuapom/nmap-wireshark-scan-detection" target="_blank">Ver en GitHub</a></p>
-</section>
-
-<section id="python-scanner">
-    <h3>Escáner de Puertos en Python</h3>
-    <p>
-        Script en Python que analiza puertos abiertos usando sockets y multithreading.
-        Útil para identificar servicios activos en un host.
-    </p>
-    <p><a href="https://github.com/Joshuapom/pythonProjects" target="_blank">Ver en GitHub</a></p>
-</section>
+                <!-- Proyecto 5 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h4 class="project-title">Escáner de Puertos Python</h4>
+                    <h5 class="project-subtitle">Multithreading & Sockets</h5>
+                    <p class="project-description">Script en Python para análisis de puertos usando sockets y multithreading. Identificación de servicios activos en hosts.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Sockets</span>
+                        <span>Multithreading</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Joshuapom/pythonProjects" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CONTACTO -->
-    <footer>
-        <p>Contacto: joshgarciad@gmail.com</p>
-        <p><a href="https://github.com/Joshuapom">GitHub</a></p>
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Contacto</span>
+                <h3 class="section-title">Conectemos</h3>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">¿Interesado en colaborar o tienes preguntas?</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>joshgarciad@gmail.com</p>
+                        <a href="mailto:joshgarciad@gmail.com" class="contact-link">Enviar mensaje</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>Joshuapom</p>
+                        <a href="https://github.com/Joshuapom" target="_blank" class="contact-link">Ver perfil</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h4>Envíame un mensaje</h4>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">JG</span>
+                    <span class="logo-text">Josh García</span>
+                </div>
+                <p class="footer-tagline">Cybersecurity & IT Specialist</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Joshuapom" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="footer-copyright">© 2023 Josh García. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
