@@ -176,7 +176,6 @@ code, pre {
     color: var(--neon-blue);
     margin-bottom: 20px;
     letter-spacing: 1px;
-    text-align: center;
 }
 
 .hero-subtitle {
@@ -184,7 +183,6 @@ code, pre {
     font-weight: 400;
     color: var(--text-light);
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .hero-description {
@@ -193,9 +191,43 @@ code, pre {
     color: var(--text-muted);
     margin-bottom: 50px;
     max-width: 600px;
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* BOTONES - ESTILOS COMPLETOS */
+.btn {
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--neon-blue), #0066ff);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 180, 255, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 180, 255, 0.1);
+    transform: translateY(-3px);
 }
 
 .hero-buttons {
@@ -205,47 +237,25 @@ code, pre {
     flex-wrap: wrap;
 }
 
-
-/* Responsive para HERO - Mejorado */
-@media (max-width: 768px) {
-    .hero {
-        padding: 100px 20px 60px;
-    }
-    
-    .hero-title {
-        font-size: 3rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    
-    .hero-description {
-        font-size: 1.1rem;
-        padding: 0 15px;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .btn {
-        width: 250px;
-        text-align: center;
-    }
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
 }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
+.scroll-indicator i {
+    color: var(--neon-blue);
+    font-size: 24px;
 }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-10px) translateX(-50%);}
+    60% {transform: translateY(-5px) translateX(-50%);}
+}
+
 /* SECCIONES */
 .section-header {
     text-align: center;
@@ -609,12 +619,6 @@ code, pre {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-    
     .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -657,11 +661,16 @@ code, pre {
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     
     .hero-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+        padding: 0 15px;
     }
     
     .projects-grid {
@@ -671,17 +680,26 @@ code, pre {
     .section-title {
         font-size: 2rem;
     }
-}
-
-@media (max-width: 480px) {
+    
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
     
     .btn {
-        width: 100%;
-        max-width: 250px;
+        width: 250px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
     }
     
     .stat-card {
