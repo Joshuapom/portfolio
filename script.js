@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
     // Menú hamburguesa
     const hamburger = document.querySelector('.hamburger');
@@ -7,6 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            // Animación de hamburguesa a X
+            const spans = hamburger.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
         });
     }
     
@@ -15,20 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
+            // Reset hamburguesa
+            const spans = hamburger.querySelectorAll('span');
+            if (spans.length > 0) {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
         });
     });
     
-    // Formulario de contacto (simulado)
-    const contactForm = document.getElementById('messageForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mensaje enviado (esta es una simulación). En un sitio real, esto conectaría con un servidor backend.');
-            contactForm.reset();
-        });
-    }
-    
-    // Efecto de scroll suave
+    // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -46,16 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Efecto parallax en hero
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.05}px)`;
-        }
-    });
-    
-    // Animación de aparición de elementos al hacer scroll
+    // Animación de aparición al hacer scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -64,13 +62,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
     }, observerOptions);
     
     // Observar elementos para animación
     document.querySelectorAll('.project-card, .stat-card, .contact-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(el);
     });
+    
+    // Efecto de scroll en navbar
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.backgroundColor = 'rgba(10, 10, 15, 0.98)';
+            navbar.style.backdropFilter = 'blur(15px)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(10, 10, 15, 0.95)';
+        }
+    });
+    
+    // Animación del scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.visibility = 'hidden';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.visibility = 'visible';
+            }
+        });
+    }
+    
+    // Año actual en el footer
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.querySelector('.footer-copyright');
+    if (copyrightElement) {
+        copyrightElement.textContent = `© ${currentYear} Josh García. Todos los derechos reservados.`;
+    }
 });
